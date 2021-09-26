@@ -1,2 +1,15 @@
-# react-spring
-repository for react spring animation
+# umi project
+
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
