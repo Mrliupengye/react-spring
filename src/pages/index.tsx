@@ -16,6 +16,12 @@ const IndexPage = () => {
       >
         state example
       </button>
+      <button
+        className={styles.comm_button}
+        onClick={() => history.push('interpolates-example')}
+      >
+        interpolates example
+      </button>
     </div>
   );
 };
