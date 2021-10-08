@@ -32,6 +32,12 @@ const FromToExample: React.FC<FromToExampleProps> = (
     ],
   });
 
+  const styles = useSpring({
+    loop: true,
+    from: { rotateZ: 0 },
+    to: { rotateZ: 180 },
+  });
+
   return (
     <div>
       <animated.h1 style={animate_opacity}>
@@ -43,6 +49,17 @@ const FromToExample: React.FC<FromToExampleProps> = (
       <animated.h1 style={animate_multiColor}>
         Hello React Spring - multiColor
       </animated.h1>
+      <animated.div
+        style={{
+          width: 80,
+          height: 80,
+          marginLeft: '100px',
+          backgroundColor: '#46e891',
+          borderRadius: 16,
+          display: 'inline-block',
+          ...styles,
+        }}
+      ></animated.div>
     </div>
   );
 };
