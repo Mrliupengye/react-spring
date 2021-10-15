@@ -23,12 +23,17 @@ const FromToExample: React.FC<FromToExampleProps> = (
   });
 
   const animate_multiColor = useSpring({
-    from: { opacity: 0, color: 'yellow' },
+    from: {
+      opacity: 0,
+      color: 'yellow',
+      background: 'rgba(0,0,0,0.5)',
+      width: '200px',
+    },
     to: [
-      { opacity: 0.5, color: 'blue' },
-      { opacity: 1, color: 'red' },
-      { opacity: 0.8, color: 'black' },
-      { opacity: 0.5, color: 'green' },
+      { opacity: 0.5, color: 'blue', width: '900px' },
+      { opacity: 1, color: 'red', width: '400px' },
+      { opacity: 0.8, color: 'black', width: '900px' },
+      { opacity: 0.5, color: 'green', width: '800px' },
     ],
   });
 
