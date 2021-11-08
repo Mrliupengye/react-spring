@@ -17,6 +17,8 @@ const FromToExample: React.FC<FromToExampleProps> = (
     to: { opacity: 1 },
   });
 
+  console.log('animate_opacity: ', animate_opacity);
+
   const animate_color = useSpring({
     from: { color: 'yellow' },
     to: { color: 'blue' },
