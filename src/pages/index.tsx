@@ -18,9 +18,15 @@ const IndexPage = () => {
       </button>
       <button
         className={styles.comm_button}
-        onClick={() => history.push('interpolates-example')}
+        onClick={() => history.push('/interpolates-example')}
       >
         interpolates example
+      </button>
+      <button
+        className={styles.comm_button}
+        onClick={() => history.push('/tween-one')}
+      >
+        tween-one
       </button>
     </div>
   );

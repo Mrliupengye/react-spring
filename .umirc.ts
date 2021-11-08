@@ -12,6 +12,7 @@ export default defineConfig({
       path: '/interpolates-example',
       component: '@/pages/interpolates-example',
     },
+    { path: '/tween-one', component: '@/pages/tween-one' },
   ],
   fastRefresh: {},
 });
