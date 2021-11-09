@@ -24,6 +24,18 @@ const IndexPage = () => {
       </button>
       <button
         className={styles.comm_button}
+        onClick={() => history.push('/usesprings-example')}
+      >
+        useSprings example
+      </button>
+      <button
+        className={styles.comm_button}
+        onClick={() => history.push('/usechain-example')}
+      >
+        useChain example
+      </button>
+      <button
+        className={styles.comm_button}
         onClick={() => history.push('/tween-one')}
       >
         tween-one

@@ -1,0 +1,27 @@
+.test {
+  width: 100px;
+  height: 100px;
+  background: blueviolet;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 8px 10px;
+  color: #fff;
+  height: 400px;
+}
+
+.myBtn {
+  border-radius: 5px;
+  margin-top: 3px;
+  font-size: 18px;
+  padding: 10px;
+  color: black;
+}
+
+.spring {
+  width: 20px;
+  margin: 5px 0;
+}

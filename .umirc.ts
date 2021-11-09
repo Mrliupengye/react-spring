@@ -13,6 +13,8 @@ export default defineConfig({
       component: '@/pages/interpolates-example',
     },
     { path: '/tween-one', component: '@/pages/tween-one' },
+    { path: '/usesprings-example', component: '@/pages/usesprings-example' },
+    { path: '/usechain-example', component: '@/pages/usechain-example' },
   ],
   fastRefresh: {},
 });
