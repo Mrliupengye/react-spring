@@ -14,7 +14,16 @@ export default defineConfig({
     },
     { path: '/tween-one', component: '@/pages/tween-one' },
     { path: '/usesprings-example', component: '@/pages/usesprings-example' },
+    { path: '/usetrail-example', component: '@/pages/usetrail-example' },
     { path: '/usechain-example', component: '@/pages/usechain-example' },
+    {
+      path: '/usetransition-example',
+      component: '@/pages/usetransition-example',
+    },
+    {
+      path: '/usetransition2-example',
+      component: '@/pages/usetransition2-example',
+    },
   ],
   fastRefresh: {},
 });

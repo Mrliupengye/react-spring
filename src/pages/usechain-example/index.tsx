@@ -1,60 +1,85 @@
-import React, { useState } from 'react';
 import {
-  useTransition,
+  animated,
+  useTrail,
+  config,
   useSpring,
   useChain,
-  config,
-  animated,
   useSpringRef,
-} from '@react-spring/web';
-import data from './data';
-import styles from './index.css';
+} from 'react-spring';
+import React, { useState } from 'react';
 
-const useChainExample = () => {
-  const [open, set] = useState(false);
+const colors = ['red', 'green', 'blue', 'orange', 'purple', 'yellow'];
+const Chain = () => {
+  const [expanded, setExpanded] = useState(false);
 
-  const springApi = useSpringRef();
-  const { size, ...rest } = useSpring({
-    ref: springApi,
+  const springRef = useSpringRef();
+  const springConfig = {
+    from: { transform: `translateX(80px)` },
+    to: { transform: `translateX(0px)` },
+    ref: springRef,
     config: config.stiff,
-    from: { size: '20%', background: 'hotpink' },
-    to: {
-      size: open ? '100%' : '20%',
-      background: open ? 'white' : 'hotpink',
-    },
-  });
+    reverse: expanded,
+  };
 
-  const transApi = useSpringRef();
-  const transition = useTransition(open ? data : [], {
-    ref: transApi,
-    trail: 400 / data.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
+  const spring = useSpring(springConfig);
 
-  // This will orchestrate the two animations above, comment the last arg and it creates a sequence
-  useChain(open ? [springApi, transApi] : [transApi, springApi], [
-    0,
-    open ? 0.1 : 0.6,
-  ]);
+  const trailRef = useSpringRef();
+  const trailConfig = {
+    from: { height: '5px' },
+    to: { height: '80px' },
+    ref: trailRef,
+    reverse: !expanded,
+  };
+
+  const trailSprings = useTrail(colors.length, trailConfig);
+  useChain(expanded ? [springRef, trailRef] : [trailRef, springRef]);
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
       <animated.div
-        style={{ ...rest, width: size, height: size }}
-        className={styles.container}
-        onClick={() => set((open) => !open)}
+        style={{
+          ...spring,
+          height: '400px',
+          display: 'inline-flex',
+          alignItems: 'flex-end',
+          marginBottom: '15px',
+        }}
       >
-        {transition((style, item) => (
+        {trailSprings.map((trailSpring, index) => (
           <animated.div
-            className={styles.item}
-            style={{ ...style, background: item.css }}
+            key={colors[index]}
+            style={{
+              ...trailSpring,
+              width: '20px',
+              marginRight: '10px',
+              transformOrigin: 'bottom',
+              backgroundColor: colors[index],
+            }}
           />
         ))}
       </animated.div>
+      <div>
+        <button
+          onClick={() => {
+            setExpanded(!expanded);
+          }}
+        >
+          切换
+        </button>
+      </div>
     </div>
   );
+};
+
+const useChainExample = () => {
+  return <Chain />;
 };
 
 export default useChainExample;
