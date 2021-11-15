@@ -1,22 +1,17 @@
 import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
 
-const { useRef, useState, useEffect, useMemo } = React;
+const { useState } = React;
 
-interface InterpolatesExampleProps {}
-
-const defaultProps: InterpolatesExampleProps = {};
-
-const InterpolatesExample: React.FC<InterpolatesExampleProps> = (
-  props: React.PropsWithChildren<InterpolatesExampleProps> = defaultProps,
-) => {
-  const {} = props;
+const InterpolatesExample = () => {
   const [clicked, toggleClick] = useState(false);
+
   const { xy, c } = useSpring({
     from: { xy: [0, 0], c: 'blue' },
     xy: clicked ? [900, 200] : [0, 0],
     c: clicked ? 'red' : 'blue',
   });
+
   return (
     <div>
       <animated.h1
