@@ -15,6 +15,9 @@ const FromToExample: React.FC<FromToExampleProps> = (
   const animate_opacity = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
+    config: { duration: 2000 },
+    onStart: () => {},
+    onRest: () => {},
   });
 
   console.log('animate_opacity: ', animate_opacity);
