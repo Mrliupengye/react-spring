@@ -6,6 +6,7 @@ export default defineConfig({
   },
   routes: [
     { path: '/', component: '@/pages/index' },
+    { path: '/svg-example', component: '@/pages/svg-example' },
     { path: '/state-example', component: '@/pages/state-example' },
     { path: '/from-to-example', component: '@/pages/from-to-example' },
     {
