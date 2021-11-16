@@ -1,17 +1,7 @@
 import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
 
-const { useRef, useState, useEffect, useMemo } = React;
-
-interface FromToExampleProps {}
-
-const defaultProps: FromToExampleProps = {};
-
-const FromToExample: React.FC<FromToExampleProps> = (
-  props: React.PropsWithChildren<FromToExampleProps> = defaultProps,
-) => {
-  const {} = props;
-
+const FromToExample = () => {
   const animate_opacity = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
@@ -20,7 +10,7 @@ const FromToExample: React.FC<FromToExampleProps> = (
     onRest: () => {},
   });
 
-  console.log('animate_opacity: ', animate_opacity);
+  console.log('animate_opacity xx: ', animate_opacity);
 
   const animate_color = useSpring({
     from: { color: 'yellow' },

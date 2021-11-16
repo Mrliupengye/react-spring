@@ -40,24 +40,24 @@ const IndexPage = () => {
       >
         useChain example
       </button>
-      <button
+      {/* <button
         className={styles.comm_button}
         onClick={() => history.push('/usetransition-example')}
       >
         useTransition example
-      </button>
+      </button> */}
       <button
         className={styles.comm_button}
         onClick={() => history.push('/usetransition2-example')}
       >
-        useTransition-2 example
+        useTransition example
       </button>
-      <button
+      {/* <button
         className={styles.comm_button}
         onClick={() => history.push('/tween-one')}
       >
         tween-one
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -1,29 +1,30 @@
 import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
 
-const { useRef, useState, useEffect, useMemo } = React;
+const { useState } = React;
 
-interface StateExampleProps {}
-
-const defaultProps: StateExampleProps = {};
-
-const StateExample: React.FC<StateExampleProps> = (
-  props: React.PropsWithChildren<StateExampleProps> = defaultProps,
-) => {
-  const {} = props;
-
-  const [clicked, toggleClick] = useState(false);
+const StateExample = () => {
+  const [clicked, handleClick] = useState(false);
 
   const animate_toggle = useSpring({
     color: clicked ? 'red' : 'blue',
   });
 
   return (
-    <div>
+    <div
+      style={{
+        width: '100%',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
       <animated.h1 style={animate_toggle}>
         {clicked ? 'Red text~' : 'Blue text~'}
       </animated.h1>
-      <button onClick={() => toggleClick(!clicked)}>click</button>
+      <button onClick={() => handleClick(!clicked)}>click</button>
     </div>
   );
 };

@@ -9,9 +9,8 @@ const slides = [
 ];
 
 const useTransition2Example = () => {
-  const [index, set] = useState(0);
+  const [index, setIndex] = useState(0);
   const transitions = useTransition(index, {
-    key: index,
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -20,7 +19,7 @@ const useTransition2Example = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      set((state) => (state + 1) % slides.length);
+      setIndex((state) => (state + 1) % slides.length);
     }, 4000);
     return () => clearTimeout(timer);
   }, []);

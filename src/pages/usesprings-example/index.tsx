@@ -81,8 +81,8 @@ const Springs = () => {
   const [visible, setVisible] = useState(true);
   const springs = useSprings(
     category.length,
-    category.map(({ color, ...config }) => ({
-      ...config,
+    category.map((item) => ({
+      ...item,
       reset: true,
       reverse: visible,
     })),
