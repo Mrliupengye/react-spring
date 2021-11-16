@@ -6,7 +6,7 @@ const { useState } = React;
 const InterpolatesExample = () => {
   const [clicked, toggleClick] = useState(false);
 
-  const { xy, c } = useSpring({
+  const interSpring = useSpring({
     from: { xy: [0, 0], c: 'blue' },
     xy: clicked ? [900, 200] : [0, 0],
     c: clicked ? 'red' : 'blue',
@@ -16,8 +16,10 @@ const InterpolatesExample = () => {
     <div>
       <animated.h1
         style={{
-          transform: xy.interpolate((x, y) => `translate(${x}px, ${y}px)`), // interpolate弃用, to代替
-          color: c.to((c) => c),
+          transform: interSpring.xy.interpolate(
+            (x, y) => `translate(${x}px, ${y}px)`,
+          ), // interpolate弃用, to代替
+          color: interSpring.c.to((c) => c),
         }}
       >
         {!clicked ? 'reset' : 'move out'}

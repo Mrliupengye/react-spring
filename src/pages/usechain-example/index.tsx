@@ -21,8 +21,6 @@ const Chain = () => {
     reverse: expanded,
   };
 
-  const spring = useSpring(springConfig);
-
   const trailRef = useSpringRef();
   const trailConfig = {
     from: { height: '5px' },
@@ -31,6 +29,7 @@ const Chain = () => {
     reverse: !expanded,
   };
 
+  const spring = useSpring(springConfig);
   const trailSprings = useTrail(colors.length, trailConfig);
   useChain(expanded ? [springRef, trailRef] : [trailRef, springRef]);
 
