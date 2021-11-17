@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 
 const slides = [
-  'photo-1544511916-0148ccdeb877',
-  'photo-1544572571-ab94fd872ce4',
-  'reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG',
-  'photo-1540206395-68808572332f',
+  require('@/assets/transition-1.jpeg'),
+  require('@/assets/transition-2.jpeg'),
+  require('@/assets/transition-3.jpeg'),
+  require('@/assets/transition-4.jpeg'),
 ];
 
 const useTransition2Example = () => {
@@ -37,7 +37,7 @@ const useTransition2Example = () => {
             height: '100vh',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: `url(https://images.unsplash.com/${slides[i]}?w=1920&q=80&auto=format&fit=crop)`,
+            backgroundImage: `url(${slides[i]}`,
           }}
         />
       ))}
