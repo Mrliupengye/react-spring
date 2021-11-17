@@ -12,6 +12,12 @@ const IndexPage = () => {
       </button>
       <button
         className={styles.comm_button}
+        onClick={() => history.push('/svg-animation')}
+      >
+        svg-animation
+      </button>
+      <button
+        className={styles.comm_button}
         onClick={() => history.push('/from-to-example')}
       >
         from to example
