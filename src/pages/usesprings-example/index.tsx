@@ -78,7 +78,7 @@ const category = [
 ];
 
 const Springs = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const springs = useSprings(
     category.length,
     category.map((item) => ({
@@ -114,7 +114,7 @@ const Springs = () => {
               style={{
                 ...spring,
                 backgroundColor: category[index].color,
-                width: '20px',
+                width: '60px',
               }}
             ></animated.div>
           );

@@ -46,7 +46,7 @@ const Trails = () => {
               style={{
                 ...spring,
                 backgroundColor: categoryColor[index],
-                width: '20px',
+                width: '60px',
               }}
             ></animated.div>
           );

@@ -56,7 +56,7 @@ const Chain = () => {
             key={colors[index]}
             style={{
               ...trailSpring,
-              width: '20px',
+              width: '60px',
               marginRight: '10px',
               transformOrigin: 'bottom',
               backgroundColor: colors[index],
